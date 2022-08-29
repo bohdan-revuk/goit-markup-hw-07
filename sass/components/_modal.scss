@@ -60,7 +60,7 @@
     fill: $primary-link-color;
   }
 }
-/* <!-- Модальне вікно наповнення --> */
+//  <!-- Модальне вікно наповнення -->
 .modal-title {
   font-weight: 700;
   font-size: 20px;
@@ -178,16 +178,6 @@
     border-color: $primary-link-color;
   }
 }
-// .input-checkbox:checked + .checkbox-text span {
-//   border-color: $primary-link-color;
-//   background-color: $primary-link-color;
-// }
-// .input-checkbox:checked + .checkbox-text .check-icon {
-//   fill: $accent-color;
-// }
-// .input-checkbox:focus + .checkbox-text span {
-//   border-color: $primary-link-color;
-// }
 .checkbox-link {
   font-weight: 400;
   font-size: 14px;
@@ -216,4 +206,9 @@
 .modal-boxbutton {
   display: flex;
   justify-content: center;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
