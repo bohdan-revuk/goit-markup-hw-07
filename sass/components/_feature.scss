@@ -1,0 +1,41 @@
+// <!--Особливості-->
+// section-feature
+.feature {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.feature__title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $primary-text-color;
+
+  margin-bottom: 10px;
+  min-width: 270px;
+}
+.feature__text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $titl-text-color;
+
+  min-width: 270px;
+}
+.feature__list {
+  display: flex;
+  .feature__item + .feature__item {
+    margin-left: 30px;
+  }
+}
+.feature-image {
+  width: 270px;
+  height: 120px;
+  background: $secondary-bg-color;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}

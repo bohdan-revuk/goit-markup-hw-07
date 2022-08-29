@@ -1,0 +1,219 @@
+// <!-- Модальне вікно -->
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  width: 528px;
+  height: 581px;
+  padding: 15px;
+
+  background: $accent-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  padding: 40px;
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+  }
+}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  background: $accent-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: $icon-close-color;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    fill: $primary-link-color;
+  }
+}
+/* <!-- Модальне вікно наповнення --> */
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+  margin-bottom: 12px;
+}
+.input-field {
+  margin-bottom: 10px;
+}
+.modal-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  &:focus {
+    outline-color: $primary-link-color;
+  }
+}
+.input-wrap {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $primary-text-color;
+  .modal-input:focus + & {
+    fill: $primary-link-color;
+  }
+}
+.input-title {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: $titl-text-color;
+  margin-bottom: 4px;
+}
+.comment-field {
+  margin-bottom: 20px;
+}
+.modal-comment {
+  display: block;
+  width: 100%;
+  height: 120px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  padding: 12px 16px;
+
+  resize: none;
+  &::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+  &:focus {
+    outline-color: $primary-link-color;
+  }
+}
+.checkbox-field {
+  margin-bottom: 30px;
+}
+.checkbox-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 7px;
+
+  cursor: pointer;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $titl-text-color;
+}
+.checkbox-text span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid $primary-text-color;
+  border-radius: 3px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.check-icon {
+  fill: transparent;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-checkbox {
+  &:checked + .checkbox-text span {
+    border-color: $primary-link-color;
+    background-color: $primary-link-color;
+  }
+  &:checked + .checkbox-text .check-icon {
+    fill: $accent-color;
+  }
+  &:focus + .checkbox-text span {
+    border-color: $primary-link-color;
+  }
+}
+// .input-checkbox:checked + .checkbox-text span {
+//   border-color: $primary-link-color;
+//   background-color: $primary-link-color;
+// }
+// .input-checkbox:checked + .checkbox-text .check-icon {
+//   fill: $accent-color;
+// }
+// .input-checkbox:focus + .checkbox-text span {
+//   border-color: $primary-link-color;
+// }
+.checkbox-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: $primary-link-color;
+}
+.modal-button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: $accent-color;
+
+  width: 200px;
+  height: 50px;
+
+  background: $primary-link-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.modal-boxbutton {
+  display: flex;
+  justify-content: center;
+}
